@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     HomepageScreen(
                         viewModel = viewModel,
-                        modifier = Modifier.padding(innerPadding)  // Aggiungi il padding qui
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
             }

@@ -8,11 +8,13 @@ import retrofit2.http.Query
 // Interfaccia Retrofit per le chiamate API
 interface WikipediaApi {
     @GET("w/api.php")
-    suspend fun searchArticles(
+    suspend fun getPageContent(
         @Query("action") action: String = "query",
         @Query("format") format: String = "json",
-        @Query("list") list: String = "search",
-        @Query("srsearch") query: String
+        @Query("prop") prop: String = "extracts",
+        @Query("titles") titles: String, // Specifica il titolo della pagina
+        @Query("explaintext") explaintext: Boolean = true,
+        @Query("exchars") exchars: Int = 5000 // Aumenta il limite del contenuto
     ): WikipediaResponse
 }
 

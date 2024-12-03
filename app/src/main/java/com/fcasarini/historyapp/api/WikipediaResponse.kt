@@ -5,10 +5,11 @@ data class WikipediaResponse(
 )
 
 data class Query(
-    val search: List<SearchResult>?
+    val pages: Map<String, Page> // Mappa con ID pagina come chiave
 )
 
-data class SearchResult(
+data class Page(
+    val pageid: Int,
     val title: String,
-    val snippet: String
+    val extract: String // Contenuto dettagliato della pagina
 )
